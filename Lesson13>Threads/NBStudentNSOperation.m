@@ -1,50 +1,49 @@
 //
-//  NBStudent.m
+//  NBStudentNSOperation.m
 //  Lesson13>Threads
 //
-//  Created by Nick Bibikov on 9/4/14.
+//  Created by Nick Bibikov on 9/11/14.
 //  Copyright (c) 2014 NickBibikov. All rights reserved.
 //
 
-#import "NBStudent.h"
+#import "NBStudentNSOperation.h"
 
-@interface NBStudent ()
+@interface NBStudentNSOperation ()
 
-+ (dispatch_queue_t) queueMethod;
++ (NSOperationQueue*) queueMethodOperation;
 
 @end
 
-@implementation NBStudent
+@implementation NBStudentNSOperation
 
-+ (dispatch_queue_t) queueMethod {
-
-    static dispatch_queue_t staticQueue;
++ (NSOperationQueue*) queueMethodOperation {
+    
+    static NSOperationQueue* operationQueue;
     static dispatch_once_t task;
     
     dispatch_once(&task, ^ {
-        staticQueue = dispatch_queue_create("com.nbibikov.testthread.taskqueue", DISPATCH_QUEUE_CONCURRENT);
+        operationQueue = [[NSOperationQueue alloc] init];
     });
-    return staticQueue;
+    return operationQueue;
     
 }
 
 - (void) guessAnswer:(NSInteger) number
                  end:(NSInteger)end
             andBlock:(void(^)(NSString*, NSInteger, CGFloat)) block {
-
-    dispatch_async ([NBStudent queueMethod], ^{
-        __weak NBStudent* weakSealf = self;
+    
+    [[NBStudentNSOperation queueMethodOperation] addOperationWithBlock: ^{
+        __weak NBStudentNSOperation* weakSealf = self;
         double startTime = CACurrentMediaTime();
         NSInteger searchAnswer = 0;
         while (searchAnswer != number) {
             searchAnswer = arc4random_uniform(end);
         }
         block(weakSealf.name, searchAnswer, CACurrentMediaTime() - startTime);
-
-    });
+        
+    }];
     
 }
-
 
 
 @end

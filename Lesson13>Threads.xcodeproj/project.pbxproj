@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32753E0919C2162B00BC28BD /* NBStudentNSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32753E0819C2162B00BC28BD /* NBStudentNSOperation.m */; };
 		32939DC519B8425600D70CF9 /* NBStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 32939DC419B8425600D70CF9 /* NBStudent.m */; };
 		3297AB4719B619F800B6C033 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3297AB4619B619F800B6C033 /* Foundation.framework */; };
 		3297AB4919B619F800B6C033 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3297AB4819B619F800B6C033 /* CoreGraphics.framework */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32753E0719C2162B00BC28BD /* NBStudentNSOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBStudentNSOperation.h; sourceTree = "<group>"; };
+		32753E0819C2162B00BC28BD /* NBStudentNSOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBStudentNSOperation.m; sourceTree = "<group>"; };
 		32939DC319B8425600D70CF9 /* NBStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBStudent.h; sourceTree = "<group>"; };
 		32939DC419B8425600D70CF9 /* NBStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBStudent.m; sourceTree = "<group>"; };
 		3297AB4319B619F800B6C033 /* Lesson13>Threads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lesson13>Threads.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +115,8 @@
 			children = (
 				32939DC319B8425600D70CF9 /* NBStudent.h */,
 				32939DC419B8425600D70CF9 /* NBStudent.m */,
+				32753E0719C2162B00BC28BD /* NBStudentNSOperation.h */,
+				32753E0819C2162B00BC28BD /* NBStudentNSOperation.m */,
 				3297AB5519B619F800B6C033 /* NBAppDelegate.h */,
 				3297AB5619B619F800B6C033 /* NBAppDelegate.m */,
 				3297AB5819B619F800B6C033 /* Images.xcassets */,
@@ -247,6 +252,7 @@
 			files = (
 				3297AB5719B619F800B6C033 /* NBAppDelegate.m in Sources */,
 				32939DC519B8425600D70CF9 /* NBStudent.m in Sources */,
+				32753E0919C2162B00BC28BD /* NBStudentNSOperation.m in Sources */,
 				3297AB5319B619F800B6C033 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

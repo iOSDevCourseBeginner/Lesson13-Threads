@@ -8,6 +8,7 @@
 
 #import "NBAppDelegate.h"
 #import "NBStudent.h"
+#import "NBStudentNSOperation.h"
 
 @interface NBAppDelegate()
 @property (strong, nonatomic) NSMutableArray* array;
@@ -32,8 +33,19 @@
     
     NBStudent* student3 = [[NBStudent alloc] init];
     student3.name = @"Mark";
+    
+    
+    NBStudentNSOperation* studentOperation1 = [[NBStudentNSOperation alloc] init];
+    student1.name = @"Machael";
+    
+    NBStudentNSOperation* studentOperation2 = [[NBStudentNSOperation alloc] init];
+    student2.name = @"Romeo";
+    
+    NBStudentNSOperation* studentOperation3 = [[NBStudentNSOperation alloc] init];
+    student3.name = @"Vlad";
 
     NSArray* journal = @[student1, student2, student3];
+    NSArray* journalOperation = @[studentOperation1, studentOperation2, studentOperation3];
 
     void (^resultBlock) (NSString*, NSInteger, CGFloat) = ^(NSString* name, NSInteger searchAnswer, CGFloat time) {
         NSLog(@"%@ found answer: %d in %f seconds", name, searchAnswer, time);
@@ -44,6 +56,11 @@
             [student guessAnswer:32 end:1000 andBlock:resultBlock];
             
         }
+    
+        for (NBStudentNSOperation* studentOperation in journalOperation) {
+            [studentOperation guessAnswer:39 end:1000 andBlock:resultBlock];
+        
+    }
     
 //-------------------------------------------------------------------------------
     return YES;
